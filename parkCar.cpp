@@ -36,6 +36,7 @@ int main(int argc, char **argv)
     }
     cout << "TIME PER GAME: " << TIME_PER_GAME << endl;
     cout << "CAR SPEED: " << speed << endl;
+    cout << "ROTATION: " << rotationAmt << endl;
     srand(time(NULL));
 
     usb.setParseFunc(parseUSBCommand);
