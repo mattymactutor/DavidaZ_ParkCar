@@ -20,17 +20,19 @@ USB_Comm usb("/dev/ttyUSB0");
 int main(int argc, char **argv)
 {
 
-    if (argc < 3)
+    if (argc < 4)
     {
         cout << "No inputs, using default values" << endl;
         TIME_PER_GAME = 30;
         speed = 150;
+        rotationAmt = 1;
     }
     else
     {
 
         TIME_PER_GAME = stoi(argv[1]);
         speed = stoi(argv[2]);
+        rotationAmt = stoi(argv[3]);
     }
     cout << "TIME PER GAME: " << TIME_PER_GAME << endl;
     cout << "CAR SPEED: " << speed << endl;
