@@ -5,5 +5,5 @@ make:
 	g++ -g -o $(FILE) $(FILE).cpp $(LIBS)
 	./$(FILE) 30 150
 
-arm:
-	arm-linux-gnueabihf-g++ -o $(FILE)_arm $(FILE).cpp $(LIBS)
+test:
+	g++ -g -o testRotate testRotate.cpp $(LIBS)
