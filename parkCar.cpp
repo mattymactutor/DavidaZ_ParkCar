@@ -45,6 +45,7 @@ int main(int argc, char **argv)
     while (window->isOpen())
     {
         elapsed = gameClock.getElapsedTime();
+
         gameClock.restart();
         sf::Event event;
         while (window->pollEvent(event))
@@ -60,31 +61,39 @@ int main(int argc, char **argv)
             }
         }
 
-        if (mode == IN_GAME)
+        // redraw every so often
+        elapsed = clockDraw.getElapsedTime();
+        if (elapsed.asMilliseconds() > 200)
         {
-            if (gamePlay())
-            {
-                drawGameObjects();
-            }
-        }
-        else if (mode == WIN)
-        {
-            win();
-        }
+            clockDraw.restart();
+            printf("refresh!\n");
 
-        // change the screen on the main thread not in the thread for rec usb commands
-        if (changeMode == START_MENU)
-        {
-            mode = START_MENU;
-            // cant change the screen in this thread
-            startMenu();
-            changeMode = IDLE;
-        }
-        else if (changeMode == IN_GAME)
-        {
-            mode = IN_GAME;
-            newGame();
-            changeMode = IDLE;
+            if (mode == IN_GAME)
+            {
+                if (gamePlay())
+                {
+                    drawGameObjects();
+                }
+            }
+            else if (mode == WIN)
+            {
+                win();
+            }
+
+            // change the screen on the main thread not in the thread for rec usb commands
+            if (changeMode == START_MENU)
+            {
+                mode = START_MENU;
+                // cant change the screen in this thread
+                startMenu();
+                changeMode = IDLE;
+            }
+            else if (changeMode == IN_GAME)
+            {
+                mode = IN_GAME;
+                newGame();
+                changeMode = IDLE;
+            }
         }
     }
 

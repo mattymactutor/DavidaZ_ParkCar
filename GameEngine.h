@@ -33,8 +33,9 @@ int speed = 150;
 double rotationAmt = .0085;
 double leftRotateMultiplier = 1, rightRotateMultiplier = 1;
 
-Time elapsed, lastCoin, lastSecond;
-Clock gameClock, clockCoin, timeClock;
+Time elapsed, lastSecond;
+int REDRAW_TIME = 200;
+Clock gameClock, clockDraw, timeClock;
 bool gasDown = false, rotateRight = false, rotateLeft = false, reverseDown = false;
 
 // Game Objects
