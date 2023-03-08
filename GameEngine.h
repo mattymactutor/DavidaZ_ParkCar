@@ -294,7 +294,7 @@ void initGame()
     DESKTOP_HEIGHT = desktop.height;// / 2;
     DESKTOP_WIDTH = desktop.width;// / 2;
     printf("Desktop Width: %d   Height: %d\n", DESKTOP_WIDTH, DESKTOP_HEIGHT);
-    window = new RenderWindow(sf::VideoMode(DESKTOP_WIDTH, DESKTOP_HEIGHT), "Car Game");
+    window = new RenderWindow(sf::VideoMode(DESKTOP_WIDTH, DESKTOP_HEIGHT), "Car Game", Style::None);
     window->setPosition(Vector2i(0, 0));
     // load font
     if (!arial.loadFromFile("arial.ttf"))
