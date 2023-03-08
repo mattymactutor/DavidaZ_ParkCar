@@ -66,7 +66,7 @@ int main(int argc, char **argv)
         if (elapsed.asMilliseconds() > 200)
         {
             clockDraw.restart();
-            printf("refresh!\n");
+            //printf("refresh!\n");
 
             if (mode == IN_GAME)
             {
