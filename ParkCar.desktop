@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=ParkTheCar
+Exec=lxterminal -e "./home/pi/DavidaZ_ParkCar/parkCar 30 130 4"
+Terminal=true
+
