@@ -309,7 +309,7 @@ void initGame()
 
 void gamePlayEvents(Event event)
 {
-    /*switch (event.type)
+    switch (event.type)
     {
     // window closed
     case sf::Event::Closed:
@@ -364,7 +364,7 @@ void gamePlayEvents(Event event)
     // we don't process other types of events
     default:
         break;
-    }*/
+    }
 }
 
 bool gamePlay()
